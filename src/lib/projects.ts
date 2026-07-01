@@ -16,6 +16,8 @@ export type Project = {
   summary: string;
   /** Tailwind gradient classes used as a placeholder cover until real exports land. */
   cover: string;
+  /** Set true once real images/content replace the placeholder templates. */
+  built?: boolean;
   featured?: boolean;
   role: string;
   industry: string;
@@ -34,6 +36,7 @@ export const projects: Project[] = [
     company: "Samsung Electronics America",
     summary: "Simplifying complex workflows",
     cover: "from-emerald-200 via-teal-100 to-slate-200",
+    built: false,
     featured: true,
     role: "Senior UX Designer",
     industry: "Logistics / Enterprise",
@@ -68,6 +71,7 @@ export const projects: Project[] = [
     company: "Samsung Electronics America",
     summary: "Simplifying complex workflows",
     cover: "from-indigo-200 via-sky-100 to-slate-200",
+    built: false,
     featured: true,
     role: "Senior UX Designer",
     industry: "Enterprise",
@@ -96,6 +100,7 @@ export const projects: Project[] = [
     company: "Pro bono",
     summary: "Matching people with the right opportunities",
     cover: "from-amber-200 via-orange-100 to-slate-200",
+    built: false,
     featured: true,
     role: "Lead Designer",
     industry: "Nonprofit",
@@ -124,6 +129,7 @@ export const projects: Project[] = [
     company: "Confidential startup",
     summary: "Getting new users to value, fast",
     cover: "from-fuchsia-200 via-pink-100 to-slate-200",
+    built: false,
     featured: true,
     role: "Product Designer",
     industry: "SaaS / Startup",

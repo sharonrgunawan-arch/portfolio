@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
+import ComingSoon from "@/components/ComingSoon";
 
 export const metadata: Metadata = {
   title: "Play — Sharon Gunawan",
   description: "Lighter, experimental, and personal work.",
 };
+
+// Flip to true once real experiments replace the placeholder tiles below.
+const isBuilt = false;
 
 // Placeholder gallery — no Figma frame was provided for Play yet.
 const experiments = [
@@ -16,6 +20,17 @@ const experiments = [
 ];
 
 export default function PlayPage() {
+  if (!isBuilt) {
+    return (
+      <ComingSoon
+        title="Play"
+        message="Experiments and side projects are on their way."
+        backHref="/"
+        backLabel="← Back home"
+      />
+    );
+  }
+
   return (
     <section className="mx-auto max-w-[1440px] px-6 py-20 sm:px-16">
       <h1 className="font-display text-4xl font-semibold sm:text-5xl">Play</h1>

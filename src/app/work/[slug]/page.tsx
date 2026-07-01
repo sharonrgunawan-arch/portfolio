@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import CaseStudyHeader from "@/components/CaseStudyHeader";
+import ComingSoon from "@/components/ComingSoon";
 import MetaStrip from "@/components/MetaStrip";
 import MetricsGrid from "@/components/MetricsGrid";
 import { getAllProjects, getProject } from "@/lib/projects";
@@ -31,6 +32,15 @@ export default async function CaseStudyPage({
   const { slug } = await params;
   const project = getProject(slug);
   if (!project) notFound();
+
+  if (!project.built) {
+    return (
+      <ComingSoon
+        title={project.title}
+        message="This case study is still being written up. Check back soon."
+      />
+    );
+  }
 
   return (
     <article className="mx-auto max-w-[960px] px-6 py-16 sm:px-8">
