@@ -31,7 +31,7 @@ and a contact section. The visual source of truth is the Figma file below.
 - **Next.js (App Router) + TypeScript** — file-based routing, great SEO/static rendering for a content site.
 - **Tailwind CSS** — utility styling that maps directly to the Figma tokens.
 - **MDX** (via `@next/mdx` or `contentlayer`) — case studies authored as content, not hand-coded pages.
-- **Deploy on Vercel** — zero-config for Next.js.
+- **Deploy on Netlify** — via the `@netlify/plugin-nextjs` runtime.
 
 ---
 
@@ -231,8 +231,8 @@ npm run build    # production build
 npm run start    # serve the build locally
 ```
 
-Deploy by importing the repo into **Vercel** (framework auto-detected as Next.js). Add a custom
-domain in the Vercel dashboard when ready.
+Deploy by importing the repo into **Netlify** (build settings auto-detected from `netlify.toml`,
+which wires up `@netlify/plugin-nextjs`). Add a custom domain in the Netlify dashboard when ready.
 
 ---
 
