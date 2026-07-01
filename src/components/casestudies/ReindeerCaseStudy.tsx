@@ -1,5 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
+import ProcessCarousel from "./ProcessCarousel";
+import KeyScreens from "./KeyScreens";
 
 // Reindeer Auto's Logistics OMS case study — built 1:1 from the Figma
 // "finalized screens" frame (node 105:3880). Content and styling come from the
@@ -77,39 +79,6 @@ const AFTER = [
   "Auto-categorized charges matched to customer preferences",
 ];
 
-const STEPS = [
-  {
-    step: "Step 1: Deep Discovery",
-    sub: "Going Beyond Surface-Level Pain Points",
-    desc: "Worked with fleet ops, accounting, and services teams to understand how processes intersected — not just what was broken.",
-    tags: ["Stakeholder Interview", "Workflow Mapping"],
-    image: "/images/reindeer/discovery-1.png",
-  },
-  {
-    step: "Step 2: Collaborative Design",
-    sub: "Inventing Workflows, Not Just Digitizing Them",
-    desc: "Collaborated with domain experts to design features that lead processes — giving Reindeer a competitive edge from day one.",
-    tags: ["Co-Design Sessions", "Information Architecture"],
-    image: null,
-  },
-];
-
-const SCREENS = [
-  {
-    title: "Personalizable Dashboard",
-    active: true,
-    desc: "Each team member's command center — surfacing orders, statuses, and actions relevant to their role.",
-    points: [
-      "Role-based views with customizable metrics",
-      "Attention flags escalate urgent orders",
-      "Bulk creation in seconds",
-    ],
-  },
-  { title: "Route Planning", active: false },
-  { title: "Automated Billing", active: false },
-  { title: "Managed Services", active: false },
-];
-
 const OUTCOMES = [
   {
     emoji: "⚡",
@@ -182,8 +151,8 @@ function GradientText({ children }: { children: React.ReactNode }) {
 export default function ReindeerCaseStudy() {
   return (
     <article className="pb-24">
-      {/* Sticky sub-nav under the global header */}
-      <div className="sticky top-[72px] z-40 border-b border-line bg-paper/90 backdrop-blur-sm">
+      {/* Sticky sub-nav (replaces the global header on case-study pages) */}
+      <div className="sticky top-0 z-40 border-b border-line bg-paper/90 backdrop-blur-sm">
         <div className="mx-auto flex h-[64px] max-w-[1440px] items-center justify-between px-6 sm:px-16">
           <Link
             href="/"
@@ -207,7 +176,7 @@ export default function ReindeerCaseStudy() {
 
       <div className="mx-auto max-w-[1440px] px-6 sm:px-16">
         {/* Overview / hero card */}
-        <section id="overview" className="scroll-mt-[140px] pt-8">
+        <section id="overview" className="scroll-mt-[88px] pt-8">
           <div
             className="flex flex-col items-center gap-12 overflow-hidden rounded-card px-6 pt-16 text-center sm:px-16"
             style={{ backgroundImage: HERO_GRADIENT }}
@@ -262,7 +231,7 @@ export default function ReindeerCaseStudy() {
         </section>
 
         {/* The problem */}
-        <section id="problem" className="scroll-mt-[140px] py-12">
+        <section id="problem" className="scroll-mt-[88px] py-12">
           <div className="flex flex-col items-center gap-3 text-center">
             <Eyebrow>// the problem</Eyebrow>
             <h2 className="font-display text-3xl font-medium">
@@ -329,7 +298,7 @@ export default function ReindeerCaseStudy() {
         </section>
 
         {/* Proposed solution */}
-        <section id="solution" className="scroll-mt-[140px] py-12">
+        <section id="solution" className="scroll-mt-[88px] py-12">
           <div className="flex flex-col items-center gap-3 text-center">
             <Eyebrow>// proposed solution</Eyebrow>
             <h2 className="font-display text-3xl font-medium">
@@ -380,7 +349,7 @@ export default function ReindeerCaseStudy() {
         </section>
 
         {/* Design process */}
-        <section id="process" className="scroll-mt-[140px] py-12">
+        <section id="process" className="scroll-mt-[88px] py-12">
           <div className="flex flex-col items-center gap-3 text-center">
             <Eyebrow>// design process</Eyebrow>
             <h2 className="font-display text-3xl font-medium">
@@ -389,45 +358,7 @@ export default function ReindeerCaseStudy() {
             </h2>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-2">
-            {STEPS.map((s) => (
-              <div
-                key={s.step}
-                className="flex flex-col overflow-hidden rounded-card bg-[#fcfcfc] shadow-[0_4px_40px_0_rgba(0,0,0,0.04)]"
-              >
-                <div className="flex h-[200px] items-center justify-center bg-[#fff5e9]">
-                  {s.image && (
-                    <Image
-                      src={s.image}
-                      alt={s.step}
-                      width={640}
-                      height={136}
-                      className="h-auto w-2/3 object-contain"
-                    />
-                  )}
-                </div>
-                <div className="flex flex-col gap-3 p-5">
-                  <div>
-                    <h3 className="font-display text-2xl font-bold">
-                      {s.step}
-                    </h3>
-                    <p className="font-display text-2xl">{s.sub}</p>
-                  </div>
-                  <p className="text-base text-muted">{s.desc}</p>
-                  <div className="flex flex-wrap gap-1">
-                    {s.tags.map((t) => (
-                      <span
-                        key={t}
-                        className="rounded-pill border border-line px-3 py-1.5 font-label text-[13px] font-medium uppercase text-muted"
-                      >
-                        {t}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <ProcessCarousel />
         </section>
 
         {/* Key screens */}
@@ -439,53 +370,11 @@ export default function ReindeerCaseStudy() {
             </h2>
           </div>
 
-          <div className="mt-10 grid grid-cols-1 items-stretch gap-6 overflow-hidden rounded-card bg-white lg:grid-cols-2">
-            <div className="flex flex-col gap-3 p-8 sm:p-11">
-              {SCREENS.map((s) => (
-                <div key={s.title} className="border-b border-line pb-3 last:border-0">
-                  <div className="flex items-center justify-between gap-3">
-                    <h3
-                      className={`font-display text-2xl font-bold ${
-                        s.active ? "text-ink" : "text-muted"
-                      }`}
-                    >
-                      {s.title}
-                    </h3>
-                    <span
-                      aria-hidden
-                      className={`text-xl ${s.active ? "rotate-180 text-ink" : "text-muted"}`}
-                    >
-                      ⌄
-                    </span>
-                  </div>
-                  {s.active && (
-                    <div className="mt-3 flex flex-col gap-2 text-base text-ink">
-                      <p>{s.desc}</p>
-                      <ul className="flex flex-col">
-                        {s.points?.map((pt) => (
-                          <li key={pt}>✓ {pt}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-
-            <div className="flex items-center p-8 sm:p-11">
-              <Image
-                src="/images/reindeer/screen-dashboard.png"
-                alt="Personalizable dashboard screen"
-                width={1920}
-                height={968}
-                className="h-auto w-full rounded-card shadow-[0_16px_32px_-4px_rgba(12,12,13,0.1)]"
-              />
-            </div>
-          </div>
+          <KeyScreens />
         </section>
 
         {/* Outcomes */}
-        <section id="result" className="scroll-mt-[140px] py-12">
+        <section id="result" className="scroll-mt-[88px] py-12">
           <div className="flex flex-col items-center gap-3 text-center">
             <Eyebrow>// outcomes</Eyebrow>
             <h2 className="font-display text-3xl font-medium">

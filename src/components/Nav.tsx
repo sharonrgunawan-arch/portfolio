@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 const links = [
@@ -11,6 +12,10 @@ const links = [
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+
+  // Case-study pages (/work/<slug>) have their own sub-nav; hide the global one.
+  if (pathname?.startsWith("/work/")) return null;
 
   return (
     <header className="sticky top-0 z-50 bg-paper/80 backdrop-blur-sm border-b border-line">

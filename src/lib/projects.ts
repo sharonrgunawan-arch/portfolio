@@ -13,7 +13,7 @@ export const projects: Project[] = [
     slug: "fleet-logistics-oms",
     title:
       "Transforming Fleet Logistics with a Purpose-Built Order Management System",
-    company: "Samsung Electronics America",
+    company: "Reindeer Auto Relocation",
     summary: "Simplifying complex workflows",
     cover: "/images/work/fleet-logistics-oms.png",
   },
