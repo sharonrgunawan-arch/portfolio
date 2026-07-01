@@ -1,10 +1,10 @@
 import Link from "next/link";
 import Hero from "@/components/Hero";
 import ProjectGrid from "@/components/ProjectGrid";
-import { getFeaturedProjects } from "@/lib/projects";
+import { getAllProjects } from "@/lib/projects";
 
 export default function Home() {
-  const featured = getFeaturedProjects();
+  const projects = getAllProjects();
 
   return (
     <>
@@ -27,7 +27,7 @@ export default function Home() {
         </div>
 
         <div className="mt-12">
-          <ProjectGrid projects={featured} />
+          <ProjectGrid projects={projects} />
         </div>
       </section>
     </>

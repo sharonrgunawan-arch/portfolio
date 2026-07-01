@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Sora, Inter, Instrument_Sans, Sacramento } from "next/font/google";
 import "./globals.css";
 import Nav from "@/components/Nav";
-import Footer from "@/components/Footer";
 
 // Fallbacks for proprietary Samsung Sharp Sans / SamsungOne.
 // Swap to next/font/local if you have the licensed font files.
@@ -34,7 +33,6 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-paper text-ink">
         <Nav />
         <main className="flex-1">{children}</main>
-        <Footer />
       </body>
     </html>
   );
