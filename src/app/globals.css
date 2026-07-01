@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors (from Figma) */
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-surface: #f1f5f9;
+  --color-line: #e2e8f0;
+  --color-muted: #64748b;
+
+  /* Radii */
+  --radius-card: 24px;
+  --radius-pill: 100px;
+
+  /* Fonts (Google-font fallbacks for the proprietary Samsung families) */
+  --font-display: var(--font-display-src), "Sora", ui-sans-serif, sans-serif;
+  --font-body: var(--font-body-src), "Inter", ui-sans-serif, sans-serif;
+  --font-label: var(--font-label-src), "Inter", sans-serif;
+  --font-script: var(--font-script-src), cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+}
