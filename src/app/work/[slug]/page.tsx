@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import CaseStudyHeader from "@/components/CaseStudyHeader";
 import ComingSoon from "@/components/ComingSoon";
-import MetaStrip from "@/components/MetaStrip";
-import MetricsGrid from "@/components/MetricsGrid";
+import ReindeerCaseStudy from "@/components/casestudies/ReindeerCaseStudy";
 import { getAllProjects, getProject } from "@/lib/projects";
 
 export function generateStaticParams() {
@@ -20,7 +18,7 @@ export async function generateMetadata({
   if (!project) return {};
   return {
     title: `${project.title} — Sharon Gunawan`,
-    description: project.overview,
+    description: project.summary,
   };
 }
 
@@ -33,39 +31,14 @@ export default async function CaseStudyPage({
   const project = getProject(slug);
   if (!project) notFound();
 
-  if (!project.built) {
-    return (
-      <ComingSoon
-        title={project.title}
-        message="This case study is still being written up. Check back soon."
-      />
-    );
+  if (slug === "fleet-logistics-oms") {
+    return <ReindeerCaseStudy />;
   }
 
   return (
-    <article className="mx-auto max-w-[960px] px-6 py-16 sm:px-8">
-      <CaseStudyHeader project={project} />
-
-      <div className="mt-12">
-        <MetaStrip project={project} />
-      </div>
-
-      <div className="mt-12 flex flex-col gap-12">
-        {project.sections.map((s) => (
-          <section key={s.heading}>
-            <h2 className="font-display text-2xl font-semibold">{s.heading}</h2>
-            <p className="mt-3 text-lg leading-relaxed text-muted">{s.body}</p>
-            {/* Drop full-bleed screenshots between sections as needed */}
-            <div className="mt-6 aspect-[16/9] w-full rounded-card bg-surface" />
-          </section>
-        ))}
-      </div>
-
-      {project.metrics && project.metrics.length > 0 && (
-        <div className="mt-16">
-          <MetricsGrid metrics={project.metrics} />
-        </div>
-      )}
-    </article>
+    <ComingSoon
+      title={project.title}
+      message="This case study is still being written up. Check back soon."
+    />
   );
 }
