@@ -10,7 +10,10 @@ export default function Home() {
     <>
       <Hero />
 
-      <section className="mx-auto max-w-[1440px] px-6 pb-24 sm:px-16">
+      <section
+        id="work"
+        className="mx-auto max-w-[1440px] scroll-mt-[72px] px-6 pb-24 sm:px-16"
+      >
         <div className="flex items-end justify-between border-t border-line pt-12">
           <h2 className="font-display text-3xl font-semibold sm:text-4xl">
             Featured projects
