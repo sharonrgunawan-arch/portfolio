@@ -7,8 +7,8 @@ export const metadata: Metadata = {
 
 // Update these with real handles/links.
 const links = [
-  { label: "Email", value: "hello@sharongunawan.com", href: "mailto:hello@sharongunawan.com" },
-  { label: "LinkedIn", value: "linkedin.com/in/sharongunawan", href: "https://linkedin.com" },
+  { label: "Email", value: "sharonrgunawan@gmail.com", href: "mailto:sharonrgunawan@gmail.com" },
+  { label: "LinkedIn", value: "linkedin.com/in/sharongunawan", href: "https://www.linkedin.com/in/sharongunawan" },
   { label: "Resume", value: "Download PDF", href: "#" },
 ];
 
@@ -24,10 +24,15 @@ export default function ConnectPage() {
       </p>
 
       <ul className="mt-12 divide-y divide-line border-y border-line">
-        {links.map((l) => (
+        {links.map((l) => {
+          const external = l.href.startsWith("http");
+          return (
           <li key={l.label}>
             <a
               href={l.href}
+              {...(external
+                ? { target: "_blank", rel: "noopener noreferrer" }
+                : {})}
               className="group flex items-center justify-between py-5"
             >
               <span className="font-label text-[13px] font-medium uppercase tracking-wide text-muted">
@@ -38,7 +43,8 @@ export default function ConnectPage() {
               </span>
             </a>
           </li>
-        ))}
+          );
+        })}
       </ul>
     </section>
   );
