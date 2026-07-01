@@ -1,3 +1,4 @@
+import Image from "next/image";
 import StatusTag from "./StatusTag";
 import ScrollIndicator from "./ScrollIndicator";
 
@@ -9,13 +10,16 @@ export default function Hero() {
           hello 👋🏻
         </h1>
 
-        {/* Tilted dual-avatar card (recreated from Figma 6:1008) */}
+        {/* avatar.png already carries its own rounded shape + transparent bg */}
         <div className="relative flex h-[116px] w-[150px] items-center justify-center">
-          <div className="absolute size-[115px] -rotate-[8deg] rounded-card border border-ink bg-surface" />
-          <div className="absolute size-[115px] rotate-[8deg] overflow-hidden rounded-card border border-ink">
-            {/* Replace with the real avatar photo exported from Figma */}
-            <div className="size-full bg-gradient-to-br from-rose-200 via-amber-100 to-sky-200" />
-          </div>
+          <Image
+            src="/images/avatar.png"
+            alt="Sharon Gunawan"
+            width={130}
+            height={130}
+            priority
+            className="size-[120px] object-contain"
+          />
         </div>
 
         <h1 className="font-display text-4xl font-semibold sm:text-[44px]">
