@@ -217,7 +217,7 @@ export default function ReindeerCaseStudy() {
         </section>
 
         {/* About the company */}
-        <section className="flex flex-col items-center gap-3 py-24 text-center">
+        <section className="flex flex-col items-center gap-3 py-12 text-center">
           <Eyebrow>//about the company</Eyebrow>
           <h2 className="font-display text-3xl font-medium">
             Reindeer Auto Relocation
@@ -418,7 +418,7 @@ export default function ReindeerCaseStudy() {
         </section>
 
         {/* CTA */}
-        <section className="flex flex-col items-center gap-8 py-16 text-center">
+        <section className="flex flex-col items-center gap-8 py-12 text-center">
           <div className="flex flex-col gap-2">
             <h2 className="font-display text-3xl font-bold">
               Let&rsquo;s work together!
