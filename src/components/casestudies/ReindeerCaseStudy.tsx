@@ -133,7 +133,7 @@ const REFLECTIONS = [
 
 function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <p className="font-semibold text-brand">{children}</p>
+    <p className="font-bold text-[#757575]">{children}</p>
   );
 }
 
@@ -245,7 +245,7 @@ export default function ReindeerCaseStudy() {
             {PROBLEMS.map((p, i) => (
               <div key={p.unit} className="contents sm:flex sm:flex-1">
                 <div className="flex flex-1 flex-col items-center gap-3 rounded-card bg-[#f7f7f7] p-6 text-center">
-                  <p className="font-display text-4xl font-extrabold leading-tight">
+                  <p className="font-display text-4xl font-bold leading-tight">
                     <GradientText>
                       {p.stat}
                       <br />
@@ -281,9 +281,9 @@ export default function ReindeerCaseStudy() {
             {CHALLENGES.map((c) => (
               <div
                 key={c.n}
-                className="flex items-center gap-6 rounded-card border border-white bg-brand/10 p-6"
+                className="flex items-center gap-6 rounded-card border border-white bg-[#a0cf67]/10 p-6"
               >
-                <p className="w-[100px] shrink-0 text-center font-display text-6xl font-extrabold leading-none sm:text-[80px]">
+                <p className="w-[100px] shrink-0 text-center font-display text-6xl font-bold leading-none sm:text-[80px]">
                   <GradientText>{c.n}</GradientText>
                 </p>
                 <div className="flex flex-col gap-1">
@@ -318,7 +318,7 @@ export default function ReindeerCaseStudy() {
                 <span className="rounded-pill border border-[#ececec] bg-[#dddddd]/85 px-3 py-1.5 font-label text-[13px] font-medium uppercase text-[#757575]">
                   Before
                 </span>
-                <h3 className="font-display text-2xl font-bold">
+                <h3 className="font-display text-2xl font-normal">
                   Legacy Workflow
                 </h3>
               </div>
@@ -330,14 +330,14 @@ export default function ReindeerCaseStudy() {
             </div>
 
             <div
-              className="flex flex-col gap-3 rounded-card p-6 text-white"
-              style={{ backgroundImage: ACCENT_GRADIENT }}
+              className="flex flex-col gap-3 rounded-card p-6 text-ink"
+              style={{ backgroundImage: HERO_GRADIENT }}
             >
               <div className="flex items-center gap-3">
                 <span className="rounded-pill border border-[#e2f0e2] bg-[#f1f9f1] px-3 py-1.5 font-label text-[13px] font-medium uppercase text-[#2d5a11]">
                   After
                 </span>
-                <h3 className="font-display text-2xl font-bold">New System</h3>
+                <h3 className="font-display text-2xl font-normal">New System</h3>
               </div>
               <ul className="flex flex-col gap-1 text-base">
                 {AFTER.map((line) => (
@@ -391,7 +391,7 @@ export default function ReindeerCaseStudy() {
                 <div className="flex size-16 items-center justify-center rounded-card bg-white text-2xl">
                   <span aria-hidden>{o.emoji}</span>
                 </div>
-                <h3 className="font-display text-2xl font-bold">{o.title}</h3>
+                <h3 className="font-display text-2xl font-medium">{o.title}</h3>
                 <p className="text-base text-ink">{o.desc}</p>
               </div>
             ))}
@@ -402,7 +402,7 @@ export default function ReindeerCaseStudy() {
         <section className="py-12">
           <div className="flex flex-col items-center gap-3 text-center">
             <Eyebrow>// reflections</Eyebrow>
-            <h2 className="font-display text-3xl font-semibold">
+            <h2 className="font-display text-3xl font-medium">
               What I took away
             </h2>
           </div>
@@ -410,7 +410,7 @@ export default function ReindeerCaseStudy() {
           <div className="mx-auto mt-10 grid max-w-[920px] grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
             {REFLECTIONS.map((r) => (
               <div key={r.title} className="flex flex-col gap-3 p-6">
-                <h3 className="font-display text-2xl font-bold">{r.title}</h3>
+                <h3 className="font-display text-2xl font-medium">{r.title}</h3>
                 <p className="text-base text-ink">{r.desc}</p>
               </div>
             ))}
@@ -430,7 +430,7 @@ export default function ReindeerCaseStudy() {
           </div>
           <Link
             href="/connect"
-            className="inline-flex items-center gap-2.5 rounded-card bg-brand px-6 py-5 text-xl font-bold text-white transition-opacity hover:opacity-90"
+            className="inline-flex items-center gap-2.5 rounded-card bg-[#757575] px-6 py-5 text-xl font-bold text-white transition-opacity hover:opacity-90"
           >
             Get in touch <span aria-hidden>→</span>
           </Link>

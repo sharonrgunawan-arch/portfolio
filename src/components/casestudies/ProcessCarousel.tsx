@@ -123,7 +123,7 @@ export default function ProcessCarousel() {
                   <h3 className="font-display text-2xl">{s.step}</h3>
                   <p className="font-display text-2xl">{s.sub}</p>
                 </div>
-                <p className="text-base text-muted">{s.desc}</p>
+                <p className="text-base text-[#757575]">{s.desc}</p>
                 <div className="flex flex-wrap gap-1">
                   {s.tags.map((t) => (
                     <span
