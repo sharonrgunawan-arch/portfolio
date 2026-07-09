@@ -4,7 +4,7 @@ import type { Project } from "@/lib/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <Link href={`/work/${project.slug}`} className="group block">
+    <Link href={`/work/${project.slug}`} className="group flex flex-col gap-6">
       {project.cover ? (
         <div className="relative aspect-[634/440] w-full overflow-hidden rounded-card bg-surface transition-transform duration-300 group-hover:scale-[1.01]">
           <Image
@@ -22,16 +22,11 @@ export default function ProjectCard({ project }: { project: Project }) {
           </span>
         </div>
       )}
-      <div className="mt-4">
-        <span className="font-label text-[13px] font-medium uppercase tracking-wide text-muted">
-          {project.company}
-        </span>
-        <h3 className="mt-1 font-display text-xl font-semibold">
-          {project.title}{" "}
-          <span className="font-body text-base font-normal text-muted">
-            · {project.summary}
-          </span>
-        </h3>
+      <div className="flex flex-col gap-1">
+        <h3 className="text-xl font-medium text-ink">{project.title}</h3>
+        <p className="text-base text-[#757575]">
+          {project.description ?? project.summary}
+        </p>
       </div>
     </Link>
   );

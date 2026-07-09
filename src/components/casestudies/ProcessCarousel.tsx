@@ -35,10 +35,10 @@ const STEPS: Step[] = [
     sub: "Inventing Workflows, Not Just Digitizing Them",
     desc: "Collaborated with domain experts to design features that lead processes — giving Reindeer a competitive edge from day one.",
     tags: ["Co-Design Sessions", "Information Architecture"],
-    image: null,
-    imageClass: "",
-    width: 0,
-    height: 0,
+    image: "/images/reindeer/discovery-2.png",
+    imageClass: "h-auto w-[48%] object-contain",
+    width: 660,
+    height: 264,
   },
   {
     step: "Step 3: Usability Testing",
@@ -120,10 +120,10 @@ export default function ProcessCarousel() {
               </div>
               <div className="flex flex-col gap-3 p-5">
                 <div>
-                  <h3 className="font-display text-2xl font-bold">{s.step}</h3>
+                  <h3 className="font-display text-2xl">{s.step}</h3>
                   <p className="font-display text-2xl">{s.sub}</p>
                 </div>
-                <p className="text-base text-muted">{s.desc}</p>
+                <p className="text-base text-[#757575]">{s.desc}</p>
                 <div className="flex flex-wrap gap-1">
                   {s.tags.map((t) => (
                     <span

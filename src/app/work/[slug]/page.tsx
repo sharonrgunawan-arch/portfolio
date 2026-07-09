@@ -35,6 +35,10 @@ export default async function CaseStudyPage({
     return <ReindeerCaseStudy />;
   }
 
+  // CarrierCaseStudy is built (components/casestudies/CarrierCaseStudy.tsx) but
+  // intentionally not wired up yet — the design is still being edited. The slug
+  // falls through to ComingSoon until the owner signs off.
+
   return (
     <ComingSoon
       title={project.title}

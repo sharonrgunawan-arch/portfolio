@@ -81,7 +81,7 @@ export default function KeyScreens() {
                 className="flex w-full items-center justify-between gap-3 py-3 text-left"
               >
                 <span
-                  className={`font-display text-2xl font-bold ${
+                  className={`font-display text-2xl font-normal ${
                     isActive ? "text-ink" : "text-muted"
                   }`}
                 >
